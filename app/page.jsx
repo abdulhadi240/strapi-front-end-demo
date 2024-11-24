@@ -9,9 +9,13 @@ const Page = async () => {
     headers: {
       Authorization: `Bearer d7dde2659234a538515133faff162bff85e666f4168a84358a0dd66bd95a280d48ef619ea430dd2131c14868c6efb6392ee028716fe54a265598877c7f2e8277b2aca91437f2d75d6a1c810d4e15e0178ff2c06c2faef89630d9f6f97e7b9c28eb3e8446da9813078170ccf44c03b376f7aa1bb9978381b5419d1ac7dfdb8bd5`,
       "Content-Type": "application/json",
+      "Cache-Control": "no-cache", // Prevent caching
+      Pragma: "no-cache", // For older HTTP/1.0 servers
     },
+    cache: "no-store", // Next.js fetch option to disable caching
   });
 
+  
   if (!res.ok) {
     throw new Error("Failed to fetch articles");
   }
