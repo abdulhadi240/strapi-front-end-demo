@@ -46,7 +46,7 @@ const Cards = ({ data }) => {
         {/* Image with Animation */}
         {selectedItem.cover?.url && (
           <div
-            className={`relative -ml-36 z-0 w-64 h-64 rounded-full overflow-hidden transform transition-transform duration-500 ${
+            className={`relative md:-ml-36 z-0 w-64 h-64 rounded-full overflow-hidden transform transition-transform duration-500 ${
               selectedItem ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-50"
             }`}
           >

@@ -1,21 +1,17 @@
 import React from "react";
 import Cards from "./components/Cards";
 
-
 const Page = async () => {
-
   const res = await fetch("https://strapi-demo-7o4t.onrender.com/api/articles?populate=*", {
     method: "GET",
     headers: {
-      Authorization: `Bearer d7dde2659234a538515133faff162bff85e666f4168a84358a0dd66bd95a280d48ef619ea430dd2131c14868c6efb6392ee028716fe54a265598877c7f2e8277b2aca91437f2d75d6a1c810d4e15e0178ff2c06c2faef89630d9f6f97e7b9c28eb3e8446da9813078170ccf44c03b376f7aa1bb9978381b5419d1ac7dfdb8bd5`,
+      Authorization: `Bearer 8c091b5bb9f9a99b9bcedf4c4c5ebed7d8430ed667611cc79a59de3ef5b4ff00f173a00c25ec71716cc67b5ed0e52481103235a3d6f7b89e8be4b583671c1b9141f1d47e1484664451fdcbd4f5bbb0a08bec8da9b0c5e37aa892070901f74132fa7320273e4d5302a43d4743791c79d5e725baf33a29ca827c4199de950ba3a3`,
       "Content-Type": "application/json",
-      "Cache-Control": "no-cache", // Prevent caching
-      Pragma: "no-cache", // For older HTTP/1.0 servers
+      "Cache-Control": "no-cache",
     },
-    cache: "no-store", // Next.js fetch option to disable caching
+    cache: "no-store", // Prevent caching
   });
 
-  
   if (!res.ok) {
     throw new Error("Failed to fetch articles");
   }
@@ -24,7 +20,7 @@ const Page = async () => {
 
   return (
     <div>
-      <Cards data={data?.data}/>
+      <Cards data={data?.data} />
     </div>
   );
 };
